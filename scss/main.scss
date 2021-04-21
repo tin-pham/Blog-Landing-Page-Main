@@ -1,0 +1,96 @@
+@import './default', './config';
+
+body,html{
+    height: 100vh;
+}
+
+section{
+    padding: 0 3rem;
+}
+
+
+
+button{
+    border: none;
+    outline: none;
+    background: none;
+    margin: 0 .25rem;
+    color: $white;
+    font-size: 1.5rem;
+    font-family: $ubuntu-ff;
+    font-weight: $bold;
+    padding: .75em 2em;
+    border-radius: 50px;
+}
+
+
+
+.button--white{
+    background: $white;
+    color: $light-red;
+}
+// Header
+.header{
+    background: linear-gradient(to right, $orange-red, $red);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    *{
+        z-index: 1;
+    }
+    &::before{
+        content: url('../images/bg-pattern-intro.svg');
+        position: absolute;
+        transform: translate(-20%, -35%);
+    }
+
+    .body{
+        height: 50vh;
+        color: $white;
+        @include flex(column, center);
+        h1{
+            font-size: 5rem;
+        }
+
+        p{
+            font-size: 1.25rem;
+        }
+
+        .subscribe--button{
+            margin-top: 3rem;
+
+            :nth-child(2){
+                border: 2px solid $white;
+            }
+        }
+    }
+}
+
+
+nav{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    .dropdown{
+        display: none;
+    }
+    img{
+        margin-right: 3.5rem;
+    } 
+    .dropdown-list{
+        button{
+            cursor: pointer;
+            position: relative;
+            &::after{
+                content: url('../images/icon-arrow-light.svg');
+                position: absolute;
+                bottom: 30%;
+                transform: translateX(10px);
+            }
+        } 
+    }
+    .account{
+        margin-left: auto;   
+    }
+}
+
